@@ -74,5 +74,11 @@ fitted = lmPriceC$fitted.values
 plot(resi, fitted)
 
 #5)
-meanX = c(mean(new_DF[,'log.sqft_living15.']), mean(new_DF[,'log.sqft_living.']),mean(new_DF[,'log.sqft_above.']))
-maxX = c(max(new_DF[,'log.sqft_living15.']), max(new_DF[,'log.sqft_living.']),max(new_DF[,'log.sqft_above.']))
+#meanX = c(mean(new_DF[,'log.sqft_living15.']), mean(new_DF[,'log.sqft_living.']),mean(new_DF[,'log.sqft_above.']), new_DF$floors=2, new_DF$condition=3)
+#maxX = c(max(new_DF[,'log.sqft_living15.']), max(new_DF[,'log.sqft_living.']),max(new_DF[,'log.sqft_above.']))
+
+x1 = data.frame(log.sqft_living15. = mean(new_DF[,'log.sqft_living15.']), log.sqft_living. = mean(new_DF[,'log.sqft_living.']), log.sqft_above. = mean(new_DF[,'log.sqft_above.']), floors = 2, condition = 3)
+x2 = data.frame(log.sqft_living15. = max(new_DF[,'log.sqft_living15.']), log.sqft_living. = max(new_DF[,'log.sqft_living.']), log.sqft_above. = max(new_DF[,'log.sqft_above.']), floors = 2, condition = 3)
+
+predict(lmPrice, x1, interval = "confidence")
+predict(lmPrice, x2, interval = "confidence")
