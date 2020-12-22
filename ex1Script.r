@@ -29,8 +29,10 @@ P = ecdf(new_DF[,'log.price.']);
 plot(P)
 
 #e) Not sure 
-pairs(new_DF[,c('floors','log.price.')])
-pairs(new_DF[,c('condition','log.price.')])
+boxplot(new_DF$log.price. ~ newDF$floors, ylab = "Total times", xlab = "Prices by floors numbrt")
+boxplot(new_DF$log.price. ~ newDF$condition, ylab = "Total times", xlab = " Prices by conditions")
+#pairs(new_DF[,c('floors','log.price.')])
+#pairs(new_DF[,c('condition','log.price.')])
 
 #f)
 pairs(new_DF[,c('log.sqft_living15.','log.price.')])
@@ -71,7 +73,7 @@ anovai
 #e)
 resi = lmPriceC$residuals
 fitted = lmPriceC$fitted.values
-plot(resi, fitted)
+plot(fitted, resi)
 
 #5)
 meanX = c(mean(new_DF[,'log.sqft_living15.']), mean(new_DF[,'log.sqft_living.']),mean(new_DF[,'log.sqft_above.']))
