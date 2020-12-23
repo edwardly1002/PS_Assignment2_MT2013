@@ -29,8 +29,8 @@ P = ecdf(new_DF[,'log.price.']);
 plot(P)
 
 #e) Not sure 
-boxplot(new_DF$log.price. ~ newDF$floors, ylab = "Total times", xlab = "Prices by floors numbrt")
-boxplot(new_DF$log.price. ~ newDF$condition, ylab = "Total times", xlab = " Prices by conditions")
+boxplot(new_DF$log.price. ~ new_DF$floors, ylab = "Prices", xlab = "Prices by floors number")
+boxplot(new_DF$log.price. ~ new_DF$condition, ylab = "Prices", xlab = " Prices by conditions")
 #pairs(new_DF[,c('floors','log.price.')])
 #pairs(new_DF[,c('condition','log.price.')])
 
