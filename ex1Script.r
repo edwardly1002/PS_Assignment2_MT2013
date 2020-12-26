@@ -25,7 +25,8 @@ ftable(new_DF[,'floors'])
 ftable(new_DF[,'condition'])
 #d)
 #hist(new_DF[,'log.price.'],freq=FALSE, probability = TRUE)
-P = ecdf(new_DF[,'log.price.']);
+P = hist(new_DF$log.price, main="Distribution of Prices", 
+         xlab = "Times", ylab = "Frequency");
 plot(P)
 
 #e) Not sure 
